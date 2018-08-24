@@ -14,14 +14,13 @@
 
 <body>
     <div class="container">
+
         <div class="row mt-1">
             <div class="card col-lg-12 bg-primary">
                 <div class="card-body text-center">
                     <h2>Survey Questions</h2>
                 </div>
             </div>
-
-
         </div>
 
 
@@ -39,12 +38,12 @@
                         <input type="text" class="form-control" id="photoId" placeholder="http://anyname.com/image.png">
                     </div>
                 </div>
+            </div>
         </form>
-        </div>
 
         <div class="card">
             <div class="card-body mt-2">
-                <div class="row">
+                <div class="row mt-1">
                     <div class="col-sm-6">
                         <p>1.Your mind is always buzzing with unexplored ideas and plans</p>
 
@@ -55,7 +54,9 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
 
+                    <div class="col-sm-6">
                         <p>2.Generally speaking, you rely more on your experience than your imagination</p>
 
                         <select data-placeholder="" class="chosen-select" id="q2">
@@ -65,7 +66,11 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+                </div>
 
+                <div class="row mt-1">
+                    <div class="col-sm-6">
                         <p>3.You find it easy to stay relaxed and focused even when there is some pressure</p>
 
                         <select data-placeholder="" class="chosen-select" id="q3">
@@ -75,6 +80,9 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+
+                    <div class="col-sm-6">
                         <p>4.You rarely do something just out of sheer curiosity</p>
 
                         <select data-placeholder="" class="chosen-select" id="q4">
@@ -84,7 +92,11 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+                </div>
 
+                <div class="row mt-1">
+                    <div class="col-sm-6">
                         <p>5.People can rarely upset you</p>
 
                         <select data-placeholder="" class="chosen-select" id="q5">
@@ -105,6 +117,11 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-sm-6">
                         <p>7.In a discussion, truth should be more important than people’s sensitivities</p>
 
                         <select data-placeholder="" class="chosen-select" id="q7">
@@ -114,6 +131,8 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+                    <div class="col-sm-6">
                         <p>8.You rarely get carried away by fantasies and ideas</p>
 
                         <select data-placeholder="" class="chosen-select" id="q8">
@@ -123,6 +142,10 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-sm-6">
                         <p>9.You think that everyone’s views should be respected regardless of whether they are supported
                             by facts or not</p>
 
@@ -133,6 +156,8 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+                    </div>
+                    <div class="col-sm-6">
                         <p>10.You feel more energetic after spending time with a group of people</p>
 
                         <select data-placeholder="" class="chosen-select" id="q10">
@@ -142,42 +167,6 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <footer class="footer">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><a href="/api/friends" id="apiFnd"><strong>API Friends List</strong></a> | <a href="https://github.com/Deepastar/Friend-Finder"><strong>GitHub
-                                Repo
-                            </strong>
-                        </a></p>
-                </div>
-                <div class="col-sm-6">
-                    <button type="submit" class="btn btn-primary btn-md" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                        Submit</button>
-                </div>
-            </div>
-        </footer>
-
-        <div class="modal fade" id="resModal" tabindex="-1" role="dialog" aria-labelledby="resModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="resModal">Your Best Match</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                      <img id="fndPic" src="#">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -185,7 +174,43 @@
     </div>
 
     </div>
-    
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col-sm-6">
+                <p><a href="/api/friends" id="apiFnd"><strong>API Friends List</strong></a> | <a href="https://github.com/Deepastar/Friend-Finder"><strong>GitHub
+                            Repo
+                        </strong>
+                    </a></p>
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary btn-md" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    Submit</button>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="resModal" tabindex="-1" role="dialog" aria-labelledby="resModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resModal">Your Best Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="fndName"></h2>
+                    <img id="fndPic" class="img-fluid" src="#">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script type="text/javascript">
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
@@ -204,15 +229,15 @@
             if (formValidation === true) {
                 var user1 = {
                     "name": $("#nameInput").val(),
-                    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+                    "photo": $("#photoId").val(),
                     "scores": [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
                     $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
                 };
                 var surveyURL = window.location.origin;
 
-                $.post(surveyURL + "/api/friends", user1, function (data) {
-                    $("#apiFnd").text(data.name);
-                    $("#fndPic").attr("src", data.photo);
+                $.post("/api/friends", user1).done(function (data) {
+                    $("#fndName").text(data[0].name);
+                    $("#fndPic").attr("src", data[0].photo);
                     $("#resModal").modal("toggle");
                 });
             }
