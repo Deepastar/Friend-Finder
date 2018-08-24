@@ -12,22 +12,33 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{background-color: rgb(3, 42, 82);}
+        h1, h3  {color: rgb(44, 2, 23);}
+        p {color: greenyellow;}
+        #jbt {background-color:darkkhaki;}
+        #api {color: greenyellow;}
+        #git {color: greenyellow;}
+        #startBtn{background-color: rgb(230, 25, 93);
+                     color: black;}
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="jumbotron text-center">
+        <div class="jumbotron text-center mt-5" id="jbt">
             <h1 class="display-4"><i class="fa fa-facebook-square fa-1x"></i>Friend Finder</h1>
             <hr class="my-4">
             <h3>Answer a few basic questions</h3>
             <br>
             <h3>Then find the friend with the greatest compatibility!</h3>
             <br>
-            <a class="btn btn-primary btn-lg" id="startBtn" href="/survey" role="button">Start!</a>
+            <a class="btn" id="startBtn" href="/survey" role="button"><strong>Start!</strong></a>
         </div>
         <p>
-            <span><a href="/api/friends">API Friend List</a> | </span>
-            <span><a href="https://github.com/Deepastar/Friend-Finder">GitHub Repository</a></span>
+            <span><a href="/api/friends" id="api">API Friend List</a> | </span>
+            <span><a href="https://github.com/Deepastar/Friend-Finder" id="git">GitHub Repository</a></span>
         </p>
     </div>
 

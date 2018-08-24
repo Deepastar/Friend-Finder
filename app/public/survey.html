@@ -10,13 +10,23 @@
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        body{background-color: rgb(3, 42, 82);}
+        #cardB, #nameInput, #photoId, #qSec {background-color: rgb(119, 197, 123);}
+        p,#cardB {color: rgb(8, 0, 0);}
+        #formId {color: whitesmoke;}
+        #apiFnd {color: greenyellow;}
+        #git {color: greenyellow;}
+        #submitBtn {background-color: rgb(207, 152, 207);
+                 color: black;}
+    </style>
 </head>
 
 <body>
     <div class="container">
 
         <div class="row mt-1">
-            <div class="card col-lg-12 bg-primary">
+            <div class="card col-lg-12" id="cardB">
                 <div class="card-body text-center">
                     <h2>Survey Questions</h2>
                 </div>
@@ -25,7 +35,7 @@
 
 
         <form>
-            <div class="row">
+            <div class="row" id="formId">
                 <div class="col-sm-6 mt-4">
                     <div class="form-group">
                         <label for="nameInput">Name (Required)</label>
@@ -41,7 +51,7 @@
             </div>
         </form>
 
-        <div class="card">
+        <div class="card"  id="qSec">
             <div class="card-body mt-2">
                 <div class="row mt-1">
                     <div class="col-sm-6">
@@ -178,14 +188,14 @@
     <footer class="footer">
         <div class="row">
             <div class="col-sm-6">
-                <p><a href="/api/friends" id="apiFnd"><strong>API Friends List</strong></a> | <a href="https://github.com/Deepastar/Friend-Finder"><strong>GitHub
+                <p><a href="/api/friends" id="apiFnd"><strong>API Friends List</strong></a> | <a href="https://github.com/Deepastar/Friend-Finder" id="git"><strong>GitHub
                             Repo
                         </strong>
                     </a></p>
             </div>
             <div class="col-sm-6">
                 <button type="submit" class="btn btn-primary btn-md" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                    Submit</button>
+                    <strong>Submit</strong></button>
             </div>
         </div>
     </footer>
