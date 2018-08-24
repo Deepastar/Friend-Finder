@@ -8,6 +8,8 @@
     <title>Survey Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -27,14 +29,14 @@
             <div class="row">
                 <div class="col-sm-6 mt-4">
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Name (Required)</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Your Name">
+                        <label for="nameInput">Name (Required)</label>
+                        <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
                     </div>
                 </div>
                 <div class="col-sm-6 mt-4">
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">Link to Photo Image (Required)</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="http://anyname.com/image.png">
+                        <label for="photoId">Link to Photo Image (Required)</label>
+                        <input type="text" class="form-control" id="photoId" placeholder="http://anyname.com/image.png">
                     </div>
                 </div>
         </form>
@@ -140,6 +142,7 @@
                             <option value="4">4</option>
                             <option value="5">5 (Strongly Agree)</option>
                         </select>
+
                     </div>
                 </div>
             </div>
@@ -149,23 +152,76 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-sm-6">
-                    <p><a href="/api/friends"><strong>Friends List</strong></a> | <a href="https://github.com/Deepastar/Friend-Finder"><strong>GitHub
-                            Repo</strong>
+                    <p><a href="/api/friends" id="apiFnd"><strong>API Friends List</strong></a> | <a href="https://github.com/Deepastar/Friend-Finder"><strong>GitHub
+                                Repo
+                            </strong>
                         </a></p>
                 </div>
                 <div class="col-sm-6">
-                    <button type="submit" class="btn btn-primary btn-md" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <button type="submit" class="btn btn-primary btn-md" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
                         Submit</button>
                 </div>
             </div>
         </footer>
+
+        <div class="modal fade" id="resModal" tabindex="-1" role="dialog" aria-labelledby="resModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resModal">Your Best Match</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                      <img id="fndPic" src="#">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     </div>
     
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+        $("#submitBtn").on("click", function (event) {
+            event.preventDefault();
+            var formValidation = true;
+            if ($("#nameInput").val() == "" || $("#photoId").val() == "") {
+                formValidation = false;
+            } else if ($("#q1").val() == "empty" || $("#q2").val() == "empty"
+                || $("#q3").val() == "empty" || $("#q4").val() == "empty"
+                || $("#q5").val() == "empty" || $("#q6").val() == "empty"
+                || $("#q7").val() == "empty" || $("#q8").val() == "empty"
+                || $("#q9").val() == "empty" || $("#q10").val() == "empty") {
 
-    
+                formValidation = false;
+            }
+
+            if (formValidation === true) {
+                var user1 = {
+                    "name": $("#nameInput").val(),
+                    "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+                    "scores": [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),
+                    $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(),]
+                };
+                var surveyURL = window.location.origin;
+
+                $.post(surveyURL + "/api/friends", user1, function (data) {
+                    $("#apiFnd").text(data.name);
+                    $("#fndPic").attr("src", data.photo);
+                    $("#resModal").modal("toggle");
+                });
+            }
+            else {
+                alert("Survey is incomplete!");
+            }
+        });
+    </script>
+
 </body>
 
 </html>

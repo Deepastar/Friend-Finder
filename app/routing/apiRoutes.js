@@ -1,4 +1,5 @@
-var friendsList=require("../app/data/friends");
+var friendsList=require("../data/friends");
+
 module.exports = function(app) {
     app.get("/api/friends", function(req, res) {
         res.json(friendsList);
@@ -31,6 +32,7 @@ module.exports = function(app) {
         else{
             res.json(friendsList);
         }
+        
         friendsList.push(user1);
     });
 };
