@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 //Type for various different custom JSON types as JSON
 app.use(bodyParser.json({type:'application/*+json'}))
 //Routing here
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 // Listener to start server
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
